@@ -1,5 +1,11 @@
-#start server & remove dist
+#Initial installation
+- Clone git.
+- Add node_modules of package.json by running in the application root:  ..$ npm i 
+
+#Start server & remove dist
 ..$ npm start server
+
+#Run project at: http://localhost:3011/
 
 #node upgrade - use following command to upgrade node to version 8
 nvm use --delete-prefix v8.10.0
