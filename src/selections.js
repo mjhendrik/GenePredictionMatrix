@@ -12,23 +12,20 @@ class Radial extends Component {
        super(props);
         var csvFilePath = require("./data/genotypematrix.tsv");
         this.textInput = React.createRef();
-        this.changeOption = this.changeOption.bind(this);
         this.renderGraph = this.renderGraph.bind(this);
 
         this.state = {
             data: csvFilePath,
-            page: 'graph'
+            page: 'graph',
+            a: false
         };
     }
     
     componentWillMount() {}
     componentDidMount() {}
-    componentDidUpdate() {}
-    changeOption (event){
-        this.state.page = event.target.value;
+    componentDidUpdate() {
         this.renderGraph();
     }
-
     renderGraph(){
         if (this.state.page === 'graph') {
           return ( <Graph ></Graph> );
@@ -42,11 +39,18 @@ class Radial extends Component {
     const menuClass = `dropdown-menu${this.state.isOpen ? " show" : ""}`;
     return (
         <div>
-            <select className="btn-warning selectpicker" data-style="btn-warning" onChange={this.changeOption} value={this.state.value}>
+            {/* <select className="btn-warning selectpicker" data-style="btn-warning" onChange={this.changeOption} value={this.state.value}>
                 <option value="graph">Svg Drive</option>
                 <option value="subgraph">Data Drive</option>
                 <option value="C">Chart Drive</option>
-            </select>
+            </select> */}
+
+            <button type="button" className="btn btn-info" onClick={() => this.setState(
+                {
+                    page: 'subgraph',
+                    a: !this.state.a
+                }
+            )}> Data Graph </button>
 
           <h2 className="pagination-centered"> Gene-Prediction Data by Dynamic Programming</h2>
             { this.renderGraph() }
