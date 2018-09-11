@@ -165,8 +165,6 @@ export default class Grid extends React.Component {
                 .duration(2000)
                 .style('fill','#c9cce2')
                 .style('stroke', cellColor)
-
-                
             }
 
             return Math.max(scoreDiag, scoreLeft, scoreUp);
