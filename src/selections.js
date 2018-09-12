@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Graph from './components/graph';
 import Grid from './components/grid'
 import Subgrid from './components/subgrid'
-import { DropdownButton, MenuItem } from 'react-bootstrap';
+import { DropdownButton, MenuItem, ToggleButton } from 'react-bootstrap';
 require('bootstrap/dist/css/bootstrap.css');
 
 
@@ -45,7 +45,7 @@ class Radial extends Component {
                 <option value="C">Chart Drive</option>
             </select> */}
 
-            <button type="button" className="btn btn-info" onClick={() => this.setState(
+            <button type="button" className="btn btn-default" onClick={() => this.setState(
                 {
                     page: 'subgraph',
                     a: !this.state.a
@@ -54,6 +54,13 @@ class Radial extends Component {
 
           <h2 className="pagination-centered"> Gene-Prediction Data by Dynamic Programming</h2>
             { this.renderGraph() }
+
+            <h5>Retract</h5>
+            <div class="btn-group btn-toggle"> 
+                <button class="btn btn-default">ON</button>
+                <button class="btn btn-primary active">OFF</button>
+            </div>
+
         </div>
       );
     }
