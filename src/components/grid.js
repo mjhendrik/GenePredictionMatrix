@@ -11,7 +11,8 @@ export default class Grid extends React.Component {
             sequence_1: defaultData[0].toString().split(''),
             sequence_2: defaultData[1].toString().split(''),
             svg: undefined,
-            grid_data: []
+            grid_data: [],
+            sync_data: []
         };
     }
 
@@ -156,6 +157,8 @@ export default class Grid extends React.Component {
             const scoreLeft = obj[0];
             const scoreUp = obj[2];
             const rect = row+'-'+col;
+
+            this.state.sync_data.push({"rect": rect, "score": scoreDiag});
 
             //When Gene letters match set the color to the changed value and return the max
             if(scoreDiag > diagonal) {
