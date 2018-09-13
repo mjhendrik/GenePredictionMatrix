@@ -1,11 +1,15 @@
 import React from 'react'
 import * as d3 from 'd3';
+// import { NativeRouter, Route, Link } from 'react-router-native'
 
 export default class Grid extends React.Component {
     
     constructor(props){
         super(props);
         let defaultData = require('./../data/genotypematrix.tsv');
+
+
+        console.log(props)
 
         this.state = {
             sequence_1: defaultData[0].toString().split(''),

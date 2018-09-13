@@ -28,7 +28,7 @@ class Radial extends Component {
     }
     renderGraph(){
         if (this.state.page === 'graph') {
-          return ( <Graph ></Graph> );
+          return ( <Graph value={'column'}></Graph> );
         } else {
           return ( <Subgrid></Subgrid> );
         }
@@ -56,9 +56,9 @@ class Radial extends Component {
             { this.renderGraph() }
 
             <h5>Retract</h5>
-            <div class="btn-group btn-toggle"> 
-                <button class="btn btn-default">ON</button>
-                <button class="btn btn-primary active">OFF</button>
+            <div className="btn-group btn-toggle"> 
+                <button className="btn btn-default">ON</button>
+                <button className="btn btn-primary active">OFF</button>
             </div>
 
         </div>
